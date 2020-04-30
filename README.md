@@ -16,9 +16,9 @@ With this project you can feed in as many relation-models from News-Relations as
 ## Installation
 The project can run out of the box. Requirements are:
 
-[NewsRelations](https://github.com/fhamborg/NewsRelations) >= 0.0.1
-[news-please](https://github.com/fhamborg/news-please) >= 1.2.28
-[stats-models](https://github.com/statsmodels/statsmodels) >= 0.11.1 
+[NewsRelations](https://github.com/fhamborg/NewsRelations) >= 0.0.1  
+[news-please](https://github.com/fhamborg/news-please) >= 1.2.28  
+[stats-models](https://github.com/statsmodels/statsmodels) >= 0.11.1   
 
 
 
