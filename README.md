@@ -3,8 +3,7 @@ This addition to the [News-Relations library](https://github.com/fhamborg/NewsRe
 
 
 ## Motivation
-This project provides additional features to the News-Relations library to facilitate its application on the analysis of news-outlets. 
-With this project you can feed in as many relation-models from News-Relations as you want, transform their most frequent co-occurrences regarding a topic/entity of interest into a contingency table and run statistical analysis on them.
+This project is based on the NewsRelations library and seeks to prove, that co-occurrences of entities between different news-outlets could be feasible to detect bias by omission or commission and cluster similar-slant news-outlets together.
 
  
 ## Features
@@ -22,7 +21,6 @@ Additional requirements are:
 [stats-models](https://github.com/statsmodels/statsmodels) >= 0.11.1   
 
 
-
 ## API reference
 <!-- For small projects with a simple enough API, include the reference docs in this README. For medium-sized and larger projects, provide a link to the API reference docs.-->
 
@@ -33,9 +31,7 @@ Additional requirements are:
 <!-- Include a step-by-step guide that enables others to use and extend your code for their projects. Whether this section is required and whether it should be part of the `README.md` or a separate file depends on your project. If the **very short** `Code Examples` from above comprehensively cover (despite being concise!) all the major functionality of your project already, this section can be omitted. **If you think that users/developers will need more information than the brief code examples above to fully understand your code, this section is mandatory.** If your project requires significant information on code reuse, place the information into a new `.md` file.-->
 
 
-## Results
-
-### Datasets
+## Datasets
 The Results are based on two datasets scraped with [news-please](https://github.com/fhamborg/news-please) from [Common Crawl](http://commoncrawl.org/) and preprocessed with [NewsRelations](https://github.com/fhamborg/NewsRelations).
 
 Calibration dataset for parameter tuning:
@@ -66,6 +62,26 @@ Dataset to run experiments on:
 
 
 ### Results
+Hypothesis 1.1:
+|            | Precision | Recall | F1-score | Support |
+|------------|-----------|--------|----------|---------|
+| same-slant | 1.0000    | 0.7222 | 0.8387   | 18      |
+
+Hypothesis 1.2:
+|                 | Precision | Recall   | F1-score | Support |
+|-----------------|-----------|----------|----------|---------|
+| different-slant | 1.0000    | 0.2593   | 0.4118   | 54      |
+
+Combined results:
+|                 | Precision | Recall | F1-score | Support |
+|-----------------|-----------|--------|----------|---------|
+| different-slant | 0.7368    | 0.2593 | 0.3836   | 54      |
+| same-slant      | 0.2453    | 0.7222 | 0.3662   | 18      |
+
+Hence, hypothesis 1 got rejected.
+
+
+
 <!-- If you performed evaluations as part of your project, include your preliminary results that you also show in your final project presentation, e.g., precision, recall, F1 measure and/or figures highlighting what your project does. If applicable, briefly describe the dataset your created or used first before presenting the evaluated use cases and the results.
 
 If you are about to complete your thesis, include the most important findings (precision/recall/F1 measure) and refer to the corresponding pages in your thesis document.-->
