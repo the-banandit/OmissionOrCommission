@@ -109,7 +109,6 @@ Hypothesis 1 got rejected.
 With the cluster coefficient of Opsahl and Panzarasa (2009) it was possible to estimate a cluster of NYT - RET - WPO, by using geometric mean and a boundary of 0.5. 
 
 
-**Hypothesis 3**
 | news-outlet | cluster by <br>literature | cluster by<br>co-occurrences | cluster by<br>sentiment only | cluster by<br>sentiment and inverse<br>residual |
 |-------------|---------------------------|------------------------------|------------------------------|-------------------------------------------------|
 | CNN         | 1                         | 1                            | 0                            | 0                                               |
@@ -122,6 +121,9 @@ With the cluster coefficient of Opsahl and Panzarasa (2009) it was possible to e
 | WPO         | 0                         | 0                            | 0                            | 0                                               |
 | WSJ         | 2                         | 1                            | 0                            | 2                                               |
 
+
+**Hypothesis 3**
+The affiliation towards a certain slant group could not be proven by hypothesis 3.
 
 ## Literature
 
