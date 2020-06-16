@@ -40,6 +40,7 @@ To check hypothesis 1 I ran chi-squared tests for same (1.1) and different-slant
 The results are matched with news-outlet groupings from literature. Accuracy, precision, recall and F1-score are estimated individually and combined.
 
 **Hypothesis 2**
+
 Goal of hypothesis 2 estimates whether there are other possibilities to categorize news-outlets into similar slant groups. 
 Therefore a graph is constructed from the news-outlets. The news-outlets are represented by nodes, the edges by the chi-value of the news-outlet tuples. The chi-statistic was chosen, since it respects differences in the number of articles of the compared news-outlets.
 
@@ -47,6 +48,7 @@ The graphs were constructed as directed and undirected graphs.
 For each Version the local clustering coefficient of each node was calculated after Opsahl and Panzarasa (2009).
 
 **Hypothesis 3**
+
 Since it is possible to cluster news-outlets via their co-occurrences, hypothesis 3 assumes, that a combination of sentiment analysis and the clustering by co-occurrences could identify slant groups.
 
 First same-slant groups are identified by extracting only the sentiment of all co-occurring entities and the sentiment of their context. Therefore, scope (s) is defined that determines the number of sentences around the sentence in which a co-occurring entity is mentioned. The sentiment of all sentences within the scope is estimated.
