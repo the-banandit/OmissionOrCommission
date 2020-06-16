@@ -8,8 +8,9 @@ Within this thesis I want to evaluate whether the co-occurrences of entities are
 As basis for this thesis I use the [News-Relations library](https://github.com/fhamborg/NewsRelations) to extract entites from a set of news-articles covering different news-outlets via a delimited period (c.f. Datasets).
 
 The jupyter-notebook can be read as a walkthrough through the experiments I conducted to examine my hypothesis.
- 
-## Code examples<!--
+
+<!-- 
+## Code examples
  Include **very short code examples** that show what the project does as **concisely** as possible. Developers should be able to figure out **how** your project solves their problem by looking at the code examples. Make sure the API you are showing off is intuitive, and that your code is short and concise. See the [news-please project](https://github.com/fhamborg/news-please/blob/master/README.md#use-within-your-own-code-as-a-library) for example. -->
 
 ## Installation
@@ -20,14 +21,17 @@ Additional requirements are:
 [news-please](https://github.com/fhamborg/news-please) >= 1.2.28  
 [stats-models](https://github.com/statsmodels/statsmodels) >= 0.11.1
 
-It is possible to apply the code on self made databases, created with NewsRelations
+It is possible to apply the code on own databases, created with NewsRelations
 
-
+<!--
 ## API reference
-<!-- For small projects with a simple enough API, include the reference docs in this README. For medium-sized and larger projects, provide a link to the API reference docs.-->
+ For small projects with a simple enough API, include the reference docs in this README. For medium-sized and larger projects, provide a link to the API reference docs.-->
 
 ## Hypotheses
+
 **Hypothesis 1**
+
+
 1.1 Within same slant groups the co-occurring entities are independent from the news-outlet
 
 1.2 Between different slant groups the co-occurring entities are dependent from the news-outlet
@@ -48,9 +52,9 @@ Since it is possible to cluster news-outlets via their co-occurrences, hypothesi
 First same-slant groups are identified by extracting only the sentiment of all co-occurring entities and the sentiment of their context. Therefore, scope (s) is defined that determines the number of sentences around the sentence in which a co-occurring entity is mentioned. The sentiment of all sentences within the scope is estimated.
 Expirements are run with s=0 and s=1, since the likelihood of neutral sentiment increases with the number of analyzed sentences. The resulting vectors of each news-outlet and each co-occurring entity are clusterd via k-means into three groups 
 
-
+<!-- 
 ## How to use and extend the project? (maybe)
-<!-- Include a step-by-step guide that enables others to use and extend your code for their projects. Whether this section is required and whether it should be part of the `README.md` or a separate file depends on your project. If the **very short** `Code Examples` from above comprehensively cover (despite being concise!) all the major functionality of your project already, this section can be omitted. **If you think that users/developers will need more information than the brief code examples above to fully understand your code, this section is mandatory.** If your project requires significant information on code reuse, place the information into a new `.md` file.-->
+Include a step-by-step guide that enables others to use and extend your code for their projects. Whether this section is required and whether it should be part of the `README.md` or a separate file depends on your project. If the **very short** `Code Examples` from above comprehensively cover (despite being concise!) all the major functionality of your project already, this section can be omitted. **If you think that users/developers will need more information than the brief code examples above to fully understand your code, this section is mandatory.** If your project requires significant information on code reuse, place the information into a new `.md` file.-->
 
 
 ## Datasets
