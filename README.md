@@ -27,7 +27,7 @@ It is possible to apply the code on own databases, created with NewsRelations
 ## API reference
  For small projects with a simple enough API, include the reference docs in this README. For medium-sized and larger projects, provide a link to the API reference docs.-->
 
-## Hypotheses
+## Approaches
 
 **Hypothesis 1**
 
@@ -64,72 +64,52 @@ The Results are based on two datasets scraped with [news-please](https://github.
 
 Calibration dataset for parameter tuning:
 
-| news-outlet         | acronym | period                  | number of articles | news-segment | slant-group from literature |
-|---------------------|---------|-------------------------|--------------------|--------------|------------------------------|
-| Huffington Post     | HFP     | 2012-01-01 - 2012-03-01 | 4909               | news         | liberal                     |
-| New York Times      | NYT     | 2012-01-01 - 2012-03-01 | 2541               | news         | liberal                     |
-| Cable News Network  | CNN     | 2012-01-01 - 2012-03-01 | 2491               | news         | centre                      |
-| Reuters             | RET     | 2012-01-01 - 2012-03-01 | 2135               | news         | centre                      |
-| Fox News            | FXN     | 2012-01-01 - 2012-03-01 | 3784               | news         | conservative                |
-| Wall Street Journal | WSJ     | 2012-01-01 - 2012-03-01 | 1215               | news         | conservative                |
+| news-outlet         | acronym | period                     | number of articles  | avg. article length | news-segment | slant-group from literature |
+|---------------------|---------|----------------------------|---------------------|---------------------|--------------|-----------------------------|
+| Cable News Network  | CNN     | 2012-01-01 -<br>2012-12-31 | 4.909               | 824                 | news         | centre                      |
+| Fox News            | FXN     | 2012-01-01 -<br>2012-12-31 | 3.784               | 499                 | news         | conservative                |
+| Huffington Post     | HFP     | 2012-01-01 -<br>2012-12-31 | 4.909               | 559                 | news         | liberal                     |
+| New York Times      | NYT     | 2012-01-01 -<br>2012-12-31 | 2.541               | 846                 | news         | liberal                     |
+| Reuters             | RET     | 2012-01-01 -<br>2012-12-31 | 2.135               | 722                 | news         | centre                      |
+| Wall Street Journal | WSJ     | 2012-01-01 -<br>2012-12-31 | 1.215               | 499                 | news         | conservative                |
 
 
-Dataset to run experiments on:
 
-| news-outlet                   | acronym | period                  | number of articles | news-segment | slant-group from literature |
-|-------------------------------|---------|-------------------------|--------------------|--------------|-----------------------------|
-| Cable News Network            | CNN     | 2011-01-01 - 2011-12-31 | 2652               | news         | centre                      |
-| Chicago Tribune               | CTB     | 2011-01-01 - 2011-12-31 | 2843               | news         | conservative                |
-| Fox News                      | FXN     | 2011-01-01 - 2011-12-31 | 6508               | news         | conservative                |
-| Huffington Post               | HFP     | 2011-01-01 - 2011-12-31 | 14876              | news         | liberal                     |
-| National Broadcasting Company | NBC     | 2011-01-01 - 2011-12-31 | 3958               | news         | centre                      |
-| New York Times                | NYT     | 2011-01-01 - 2011-12-31 | 11281              | news         | liberal                     |
-| Reuters                       | RET     | 2011-01-01 - 2011-12-31 | 16767              | news         | centre                      |
-| Washington Post               | WPO     | 2011-01-01 - 2011-12-31 | 14814              | news         | liberal                     |
-| Wall Street Journal           | WSJ     | 2011-01-01 - 2011-12-31 | 2522               | news         | conservative                |
+Main dataset:
+
+| news-outlet                      | acronym | period                     | number of articles  | avg. article length | news-segment | slant-group from literature |
+|----------------------------------|---------|----------------------------|---------------------|---------------------|--------------|-----------------------------|
+| Cable News Network               | CNN     | 2011-01-01 -<br>2011-12-31 | 2.652               | 822                 | news         | centre                      |
+| Chicago Tribune                  | CTB     | 2011-01-01 -<br>2011-12-31 | 2.843               | 538                 | news         | conservative                |
+| Fox News                         | FXN     | 2011-01-01 -<br>2011-12-31 | 6.508               | 704                 | news         | conservative                |
+| Huffington Post                  | HFP     | 2011-01-01 -<br>2011-12-31 | 14.876              | 556                 | news         | liberal                     |
+| National Broadcasting<br>Company | NBC     | 2011-01-01 -<br>2011-12-31 | 3.958               | 367                 | news         | centre                      |
+| New York Times                   | NYT     | 2011-01-01 -<br>2011-12-31 | 11.281              | 858                 | news         | liberal                     |
+| Reuters                          | RET     | 2011-01-01 -<br>2011-12-31 | 16.767              | 677                 | news         | centre                      |
+| Washington Post                  | WPO     | 2011-01-01 -<br>2011-12-31 | 14.814              | 609                 | news         | liberal                     |
+| Wall Street Journal              | WSJ     | 2011-01-01 -<br>2011-12-31 | 2.522               | 559                 | news         | conservative                |
+
 
 
 ## Results
-**Hypothesis 1.1:**
-|            | Precision | Recall | F1-score | Support |
-|------------|-----------|--------|----------|---------|
-| same-slant | 1.0000    | 0.7222 | 0.8387   | 18      |
+For each approach of entitiy extraction I calculated the accuracy, precision, recall and F1 score.
 
-**Hypothesis 1.2:**
-|                 | Precision | Recall   | F1-score | Support |
-|-----------------|-----------|----------|----------|---------|
-| different-slant | 1.0000    | 0.2593   | 0.4118   | 54      |
-
-**Combined results:**
-|                 | Precision | Recall | F1-score | Support |
-|-----------------|-----------|--------|----------|---------|
-| different-slant | 0.7368    | 0.2593 | 0.3836   | 54      |
-| same-slant      | 0.2453    | 0.7222 | 0.3662   | 18      |
-
-Hypothesis 1 got rejected.
-
-**Hypothesis 2**
-
-![network structure](/images/network.png)
-
-With the cluster coefficient of Opsahl and Panzarasa (2009) it was possible to estimate a cluster of NYT - RET - WPO, by using geometric mean and a boundary of 0.5. 
+ 
+| entity extraction<br>approach     | accuracy | slant-group<br>affiliation from <br>literature | precision | recall | F1-score |
+|-----------------------------------|----------|------------------------------------------------|-----------|--------|----------|
+| TF-IDF                            |          | same (n=18)                                    |           |        |          |
+|                                   |          | diff (n=54)                                    |           |        |          |
+| LDA argmax                        | 0.4722   | same (n=18)                                    | 0.2222    | 0.4444 | 0.2963   |
+|                                   |          | diff (n=54)                                    | 0.7222    | 0.4815 | 0.5778   |
+| top n<br>co-occurring<br>entities | 0.375    | same (n=18)                                    | 0.7468    | 0.2593 | 0.3836   |
+|                                   |          | diff (n=54)                                    | 0.2453    | 0.7222 | 0.3662   |
+| manual extraction 1               | 0.4167   | same (n=18)                                    | 0.75      | 0.3333 | 0.4615   |
+|                                   |          | diff (n=54)                                    | 0.25      | 0.6667 | 0.3636  
+| manual extraction 2               | 0.5556   | same (n=18)                                    | 0.2308    | 0.3333 | 0.2727   |
+|                                   |          | diff (n=54)                                    | 0.7391    | 0.6296 | 0.68     |
 
 
-| news-outlet | cluster by <br>literature | cluster by<br>co-occurrences | cluster by<br>sentiment only | cluster by<br>sentiment and inverse<br>residual |
-|-------------|---------------------------|------------------------------|------------------------------|-------------------------------------------------|
-| CNN         | 1                         | 1                            | 0                            | 0                                               |
-| CTB         | 2                         | 2                            | 0                            | 2                                               |
-| FXN         | 2                         | 0                            | 1                            | 1                                               |
-| HFP         | 0                         | 0                            | 0                            | 1                                               |
-| NBC         | 1                         | 1                            | 2                            | 0                                               |
-| NYT         | 0                         | 0                            | 0                            | 0                                               |
-| RET         | 1                         | 0                            | 1                            | 0                                               |
-| WPO         | 0                         | 0                            | 0                            | 0                                               |
-| WSJ         | 2                         | 1                            | 0                            | 2                                               |
 
-
-**Hypothesis 3**
-The affiliation towards a certain slant group could not be proven by hypothesis 3.
 
 ## Literature
 
