@@ -1,66 +1,36 @@
 ## Master Thesis 
-Application of the [News-Relations library](https://github.com/fhamborg/NewsRelations) enables you to compare cooccurrences of different news-outlets and run statistical analysis on them, with the aim of detecting **bias by omission or comission**.
+This extension to the [News-Relations library](https://github.com/fhamborg/NewsRelations) enables you to compare cooccurrences of different news-outlets and run statistical analysis on them, with the aim of detecting **bias by omission or comission**.
 
+There are different possiblities to select the co-occurring entities, based on classical NLP methods.
+
+The datasets can be found and downloaded [here](https://tinyurl.com/banandit-thesis-datasets).
 
 ## Motivation
-Bias by omission originates wanted or unwanted through discrepancies in the coverage of topics by different news-outlets. 
-Within this thesis I want to evaluate whether the co-occurrences of entities are a feasible tool to identify bias by omission or commission, since discrepancies in co-occurrences could indicate discrepancies in coverage and therefore could be used to detect bias. 
-As basis for this thesis I use the [News-Relations library](https://github.com/fhamborg/NewsRelations) to extract entites from a set of news-articles covering different news-outlets via a delimited period (c.f. Datasets).
+Bias by omission or commission describes the wanted or unwanted discrepancy of information between news-articles from different news outlets, covering the same topic. It manifests in the omission of perspectives or sources. Hence, it shows similarities to source-selection bias. 
+Since co-occurrences carry additional infomation regarding the author's weighing of necessary content, they seem feasible for the detection of this form of media bias. 
 
-The jupyter-notebook can be read as a walkthrough through the experiments I conducted to examine my hypothesis.
+The basis of this thesis is the [News-Relations library](https://github.com/fhamborg/NewsRelations), which extracts all co-occurrences of entities within a given corpus.
+I use it to extract the co-occurrences of different corpora and quantitatively compare them. 
+Based on this I can derive the relation of corpora and the likelihood of an affiliation towards a similar slant group. 
 
-<!-- 
-## Code examples
- Include **very short code examples** that show what the project does as **concisely** as possible. Developers should be able to figure out **how** your project solves their problem by looking at the code examples. Make sure the API you are showing off is intuitive, and that your code is short and concise. See the [news-please project](https://github.com/fhamborg/news-please/blob/master/README.md#use-within-your-own-code-as-a-library) for example. -->
+The jupyter notebook contains the application of all code and can call and reproduce all results I produced within this thesis. 
+
 
 ## Installation
-The project can run within the notebook, if an Anaconda environment is installed.
+The code can run witin a Anaconda 3 environment. 
 
 Additional requirements are:
+
 [NewsRelations](https://github.com/fhamborg/NewsRelations) >= 0.0.1  
 [news-please](https://github.com/fhamborg/news-please) >= 1.2.28  
 [stats-models](https://github.com/statsmodels/statsmodels) >= 0.11.1
 
-It is possible to apply the code on own databases, created with NewsRelations
-
-<!--
-## API reference
- For small projects with a simple enough API, include the reference docs in this README. For medium-sized and larger projects, provide a link to the API reference docs.-->
-
-## Approaches
-
-**Hypothesis 1**
-
-
-1.1 Within same slant groups the co-occurring entities are independent from the news-outlet
-
-1.2 Between different slant groups the co-occurring entities are dependent from the news-outlet
-    
-To check hypothesis 1 I ran chi-squared tests for same (1.1) and different-slant (1.2) news-outlets.
-The results are matched with news-outlet groupings from literature. Accuracy, precision, recall and F1-score are estimated individually and combined.
-
-**Hypothesis 2**
-
-Goal of hypothesis 2 estimates whether there are other possibilities to categorize news-outlets into similar slant groups. 
-Therefore a graph is constructed from the news-outlets. The news-outlets are represented by nodes, the edges by the chi-value of the news-outlet tuples. The chi-statistic was chosen, since it respects differences in the number of articles of the compared news-outlets.
-
-The graphs were constructed as directed and undirected graphs.
-For each Version the local clustering coefficient of each node was calculated after Opsahl and Panzarasa (2009).
-
-**Hypothesis 3**
-
-Since it is possible to cluster news-outlets via their co-occurrences, hypothesis 3 assumes, that a combination of sentiment analysis and the clustering by co-occurrences could identify slant groups.
-
-First same-slant groups are identified by extracting only the sentiment of all co-occurring entities and the sentiment of their context. Therefore, scope (s) is defined that determines the number of sentences around the sentence in which a co-occurring entity is mentioned. The sentiment of all sentences within the scope is estimated.
-Expirements are run with s=0 and s=1, since the likelihood of neutral sentiment increases with the number of analyzed sentences. The resulting vectors of each news-outlet and each co-occurring entity are clusterd via k-means into three groups 
-
-<!-- 
-## How to use and extend the project? (maybe)
-Include a step-by-step guide that enables others to use and extend your code for their projects. Whether this section is required and whether it should be part of the `README.md` or a separate file depends on your project. If the **very short** `Code Examples` from above comprehensively cover (despite being concise!) all the major functionality of your project already, this section can be omitted. **If you think that users/developers will need more information than the brief code examples above to fully understand your code, this section is mandatory.** If your project requires significant information on code reuse, place the information into a new `.md` file.-->
+It is possible apply the code on different databases, if they were gathered with News-Relations.
 
 
 ## Datasets
-The Results are based on two datasets scraped with [news-please](https://github.com/fhamborg/news-please) from [Common Crawl](http://commoncrawl.org/) and preprocessed with [NewsRelations](https://github.com/fhamborg/NewsRelations).
+My results are based on two datasets scraped with [news-please](https://github.com/fhamborg/news-please) from [Common Crawl](http://commoncrawl.org/) and preprocessed with [NewsRelations](https://github.com/fhamborg/NewsRelations).
+The datasets can be found and downloaded [here](https://tinyurl.com/banandit-thesis-datasets).
 
 Calibration dataset for parameter tuning:
 
@@ -91,14 +61,43 @@ Main dataset:
 
 
 
+## Content
+
+The primary objective of this project is to cluster different corpora into similar slant groups analysing co-occurrences of entities.
+
+Therefore, this approach heavily relies on the selected entities for co-occurrence extraction. 
+I ran different approaches on the selection entities, featuring classical methods from NLP.
+
+I applied: 
+
+**TF-IDF** on every corpus and extracted the top *n* occurring entities.
+
+**LDA** on every corpus to find *m* topics and selected the top *n* entities describing those topics.
+
+A **Reference entity** and extraced *n* co-occurring entities for every constellation of corpus tuples.
+
+**Manually selected** entities by reading through the outer spectrum of the different slant groups and selected entities with a high likelihood of being covered ambivalently within different slant groups. (I repeated this process two times with no major differences.
+
+
+After extracting the co-occurring entities I processed every constellation of corpus-pairing from my dataset and calculated the chi-statistic and hence the relation/dependence of the different corpora. 
+The results can be seen below.
+
+Finally, I clustered all corpora based after creating a undirected, interconnected, weighted network-stucture.
+I chose the chi-statistics as weights for the edges and clustered everything with Opsahl's clustering coefficient.
+I chose the cluster affiliation threshold of the coefficient to be a fraction of the maximum occurring clustering coefficient. 
+The results can be seen below. 
+
+<!--For further reading see [this](https://thesisLink.com)-->
+
+
+
 ## Results
 For each approach of entitiy extraction I calculated the accuracy, precision, recall and F1 score.
 
- 
 | entity extraction<br>approach     | accuracy | slant-group<br>affiliation from <br>literature | precision | recall | F1-score |
 |-----------------------------------|----------|------------------------------------------------|-----------|--------|----------|
-| TF-IDF                            |          | same (n=18)                                    |           |        |          |
-|                                   |          | diff (n=54)                                    |           |        |          |
+| TF-IDF                            | 0.3650   | same (n=18)                                    | 0.0000     | 0.0000  | 0.0000    |
+|                                   |          | diff (n=54)                                    | 0.7500     | 1.0000  | 0.8571    |
 | LDA argmax                        | 0.4722   | same (n=18)                                    | 0.2222    | 0.4444 | 0.2963   |
 |                                   |          | diff (n=54)                                    | 0.7222    | 0.4815 | 0.5778   |
 | top n<br>co-occurring<br>entities | 0.375    | same (n=18)                                    | 0.7468    | 0.2593 | 0.3836   |
@@ -109,9 +108,6 @@ For each approach of entitiy extraction I calculated the accuracy, precision, re
 |                                   |          | diff (n=54)                                    | 0.7391    | 0.6296 | 0.68     |
 
 
-<!--
-for clustering: with 0.5
-<!-- results clustering  --> 
 
 | metric     | clusters <br>(threshold <br>$ c = 0.5 * c_{\omega}$) | clusters <br>(threshold <br>$ c = 0.75 * c_{\omega}$) | clusters <br>(threshold <br>$ c = 0.8 * c_{\omega}$) | clusters <br>(threshold <br>$ c = 0.9 * c_{\omega}$) |
 |------------|------------------------------------------------------|-------------------------------------------------------|------------------------------------------------------|------------------------------------------------------|
@@ -121,16 +117,12 @@ for clustering: with 0.5
 | geometric  | CTB, FXN, HFP, <br>RET, WPO, CNN, <br>NBC, NYT, WSJ  | CTB, RET, WPO<br>FXN, CNN, HFP, <br>NBC, WSJ          | FXN, CNN, CTB,<br>HFP, <br><br>WSJ, RET, WPO         | FXN, CNN, CTB,<br>HFP, <br><br>WSJ, RET, WPO         |
 
 
-<!-- results clustering without 0.5 -->
-
-| metric     | clusters <br>(threshold <br>$ c = 0.75 * c_{\omega}$) | clusters <br>(threshold <br>$ c = 0.8 * c_{\omega}$) | clusters <br>(threshold <br>$ c = 0.9 * c_{\omega}$) |
-|------------|-------------------------------------------------------|------------------------------------------------------|------------------------------------------------------|
-| argmin     | FXN, CNN, CTB, <br>RET, WPO, HFP                      | FXN, CNN, CTB,<br>HFP                                | FXN, CNN, CTB,<br>HFP                                |
-| argmax     | CNN, RET, WPO, <br>WSJ, CTB, NBC,                     | WSJ, RET, WPO                                        | WSJ, RET, WPO                                        |
-| arithmetic | CTB, RET, WPO,<br>FXN, CNN, HFP,<br>WSJ               | HFP, CNN, CTB                                        | HFP, CNN, CTB                                        |
-| geometric  | CTB, RET, WPO<br>FXN, CNN, HFP, <br>NBC, WSJ          | FXN, CNN, CTB,<br>HFP, <br><br>WSJ, RET, WPO         | FXN, CNN, CTB,<br>HFP, <br><br>WSJ, RET, WPO         |
 
 
+## How to extend the project?
+
+This project can be easily extended by different approaches of selecting entities for co-occurrence analysis. 
+Especially an integration of ideology- or bias-terms, e.g. in combination with the LDA approach could lead to better results.
 
 
 ## Literature
