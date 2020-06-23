@@ -109,6 +109,28 @@ For each approach of entitiy extraction I calculated the accuracy, precision, re
 |                                   |          | diff (n=54)                                    | 0.7391    | 0.6296 | 0.68     |
 
 
+<!--
+for clustering: with 0.5
+<!-- results clustering  --> 
+
+| metric     | clusters <br>(threshold <br>$ c = 0.5 * c_{\omega}$) | clusters <br>(threshold <br>$ c = 0.75 * c_{\omega}$) | clusters <br>(threshold <br>$ c = 0.8 * c_{\omega}$) | clusters <br>(threshold <br>$ c = 0.9 * c_{\omega}$) |
+|------------|------------------------------------------------------|-------------------------------------------------------|------------------------------------------------------|------------------------------------------------------|
+| argmin     | CTB , FXN, HFP, <br>RET, WPO, CNN, <br>NBC, NYT, WSJ | FXN, CNN, CTB, <br>RET, WPO, HFP                      | FXN, CNN, CTB,<br>HFP                                | FXN, CNN, CTB,<br>HFP                                |
+| argmax     | CTB, FXN, HFP, <br>RET, WPO, CNN, <br>NBC, NYT, WSJ  | CNN, RET, WPO, <br>WSJ, CTB, NBC,                     | WSJ, RET, WPO                                        | WSJ, RET, WPO                                        |
+| arithmetic | CTB, FXN, HFP, <br>RET, WPO, CNN, <br>NBC, NYT, WSJ  | CTB, RET, WPO,<br>FXN, CNN, HFP,<br>WSJ               | HFP, CNN, CTB                                        | HFP, CNN, CTB                                        |
+| geometric  | CTB, FXN, HFP, <br>RET, WPO, CNN, <br>NBC, NYT, WSJ  | CTB, RET, WPO<br>FXN, CNN, HFP, <br>NBC, WSJ          | FXN, CNN, CTB,<br>HFP, <br><br>WSJ, RET, WPO         | FXN, CNN, CTB,<br>HFP, <br><br>WSJ, RET, WPO         |
+
+
+<!-- results clustering without 0.5 -->
+
+| metric     | clusters <br>(threshold <br>$ c = 0.75 * c_{\omega}$) | clusters <br>(threshold <br>$ c = 0.8 * c_{\omega}$) | clusters <br>(threshold <br>$ c = 0.9 * c_{\omega}$) |
+|------------|-------------------------------------------------------|------------------------------------------------------|------------------------------------------------------|
+| argmin     | FXN, CNN, CTB, <br>RET, WPO, HFP                      | FXN, CNN, CTB,<br>HFP                                | FXN, CNN, CTB,<br>HFP                                |
+| argmax     | CNN, RET, WPO, <br>WSJ, CTB, NBC,                     | WSJ, RET, WPO                                        | WSJ, RET, WPO                                        |
+| arithmetic | CTB, RET, WPO,<br>FXN, CNN, HFP,<br>WSJ               | HFP, CNN, CTB                                        | HFP, CNN, CTB                                        |
+| geometric  | CTB, RET, WPO<br>FXN, CNN, HFP, <br>NBC, WSJ          | FXN, CNN, CTB,<br>HFP, <br><br>WSJ, RET, WPO         | FXN, CNN, CTB,<br>HFP, <br><br>WSJ, RET, WPO         |
+
+
 
 
 ## Literature

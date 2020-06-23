@@ -1,0 +1,167 @@
+####################################################
+argmin:
+
+ threshold 0.5*c_omega
+['CTB', 'FXN', 'HFP']
+['CTB', 'RET', 'WPO']
+['FXN', 'CNN', 'CTB']
+['HFP', 'CNN', 'CTB']
+['NBC', 'FXN', 'HFP']
+['NYT', 'WPO', 'WSJ']
+['RET', 'CNN', 'CTB']
+['WPO', 'CNN', 'CTB']
+['WSJ', 'FXN', 'HFP']
+['WSJ', 'RET', 'WPO']
+
+
+ threshold 0.75*c_omega
+['FXN', 'CNN', 'CTB']
+['HFP', 'CNN', 'CTB']
+['RET', 'CNN', 'CTB']
+['WPO', 'CNN', 'CTB']
+
+
+ threshold 0.8*c_omega
+['FXN', 'CNN', 'CTB']
+['HFP', 'CNN', 'CTB']
+
+
+ threshold 0.9*c_omega
+['FXN', 'CNN', 'CTB']
+['HFP', 'CNN', 'CTB']
+
+####################################################
+argmax:
+
+ threshold 0.5*c_omega
+['CNN', 'RET', 'WPO']
+['CNN', 'WPO', 'WSJ']
+['CTB', 'RET', 'WPO']
+['CTB', 'WPO', 'WSJ']
+['FXN', 'CNN', 'CTB']
+['FXN', 'CTB', 'HFP']
+['FXN', 'HFP', 'NBC']
+['FXN', 'NBC', 'NYT']
+['FXN', 'WPO', 'WSJ']
+['HFP', 'CNN', 'CTB']
+['HFP', 'CTB', 'FXN']
+['HFP', 'FXN', 'NBC']
+['HFP', 'NBC', 'NYT']
+['HFP', 'WPO', 'WSJ']
+['NBC', 'RET', 'WPO']
+['NBC', 'WPO', 'WSJ']
+['NYT', 'HFP', 'NBC']
+['NYT', 'NBC', 'RET']
+['RET', 'CNN', 'CTB']
+['RET', 'CTB', 'FXN']
+['RET', 'HFP', 'NBC']
+['RET', 'NBC', 'NYT']
+['RET', 'WPO', 'WSJ']
+['WPO', 'CNN', 'CTB']
+['WPO', 'CTB', 'FXN']
+['WPO', 'HFP', 'NBC']
+['WPO', 'NBC', 'NYT']
+['WPO', 'RET', 'WSJ']
+['WSJ', 'FXN', 'HFP']
+['WSJ', 'HFP', 'NBC']
+['WSJ', 'RET', 'WPO']
+
+
+ threshold 0.75*c_omega
+['CNN', 'RET', 'WPO']
+['CNN', 'WPO', 'WSJ']
+['CTB', 'RET', 'WPO']
+['CTB', 'WPO', 'WSJ']
+['NBC', 'RET', 'WPO']
+['NBC', 'WPO', 'WSJ']
+['WSJ', 'RET', 'WPO']
+
+
+ threshold 0.8*c_omega
+['WSJ', 'RET', 'WPO']
+
+
+ threshold 0.9*c_omega
+['WSJ', 'RET', 'WPO']
+
+
+
+####################################################
+arithmetic:
+
+
+ threshold 0.5*c_omega
+['CTB', 'FXN', 'HFP']
+['CTB', 'RET', 'WPO']
+['FXN', 'CNN', 'CTB']
+['HFP', 'CNN', 'CTB']
+['NBC', 'RET', 'WPO']
+['NYT', 'WPO', 'WSJ']
+['RET', 'CNN', 'CTB']
+['WPO', 'CNN', 'CTB']
+['WSJ', 'FXN', 'HFP']
+['WSJ', 'RET', 'WPO']
+
+
+ threshold 0.75*c_omega
+['CTB', 'RET', 'WPO']
+['FXN', 'CNN', 'CTB']
+['HFP', 'CNN', 'CTB']
+['RET', 'CNN', 'CTB']
+['WPO', 'CNN', 'CTB']
+['WSJ', 'RET', 'WPO']
+
+
+ threshold 0.8*c_omega
+['HFP', 'CNN', 'CTB']
+
+
+ threshold 0.9*c_omega
+['HFP', 'CNN', 'CTB']
+
+
+
+####################################################
+geometric:
+
+ threshold 0.5*c_omega
+['CNN', 'RET', 'WPO']
+['CTB', 'FXN', 'HFP']
+['CTB', 'RET', 'WPO']
+['FXN', 'CNN', 'CTB']
+['FXN', 'WPO', 'WSJ']
+['HFP', 'CNN', 'CTB']
+['HFP', 'NBC', 'NYT']
+['NBC', 'FXN', 'HFP']
+['NBC', 'RET', 'WPO']
+['NYT', 'WPO', 'WSJ']
+['RET', 'CNN', 'CTB']
+['RET', 'WPO', 'WSJ']
+['WPO', 'CNN', 'CTB']
+['WPO', 'NBC', 'NYT']
+['WSJ', 'FXN', 'HFP']
+['WSJ', 'RET', 'WPO']
+
+
+ threshold 0.75*c_omega
+['CTB', 'RET', 'WPO']
+['FXN', 'CNN', 'CTB']
+['HFP', 'CNN', 'CTB']
+['NBC', 'RET', 'WPO']
+['RET', 'CNN', 'CTB']
+['WPO', 'CNN', 'CTB']
+['WSJ', 'FXN', 'HFP']
+['WSJ', 'RET', 'WPO']
+
+
+ threshold 0.8*c_omega
+['FXN', 'CNN', 'CTB']
+['HFP', 'CNN', 'CTB']
+['WSJ', 'RET', 'WPO']
+
+
+ threshold 0.9*c_omega
+['FXN', 'CNN', 'CTB']
+['HFP', 'CNN', 'CTB']
+['WSJ', 'RET', 'WPO']
+
