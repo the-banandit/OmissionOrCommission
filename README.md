@@ -94,18 +94,13 @@ The results can be seen below.
 ## Results
 For each approach of entitiy extraction I calculated the accuracy, precision, recall and F1 score.
 
-| entity extraction<br>approach     | accuracy | slant-group<br>affiliation from <br>literature | precision | recall | F1-score |
-|-----------------------------------|----------|------------------------------------------------|-----------|--------|----------|
-| TF-IDF                            | 0.3650   | same (n=18)                                    | 0.0000     | 0.0000  | 0.0000    |
-|                                   |          | diff (n=54)                                    | 0.7500     | 1.0000  | 0.8571    |
-| LDA argmax                        | 0.4722   | same (n=18)                                    | 0.2222    | 0.4444 | 0.2963   |
-|                                   |          | diff (n=54)                                    | 0.7222    | 0.4815 | 0.5778   |
-| top n<br>co-occurring<br>entities | 0.375    | same (n=18)                                    | 0.7468    | 0.2593 | 0.3836   |
-|                                   |          | diff (n=54)                                    | 0.2453    | 0.7222 | 0.3662   |
-| manual extraction 1               | 0.4167   | same (n=18)                                    | 0.75      | 0.3333 | 0.4615   |
-|                                   |          | diff (n=54)                                    | 0.25      | 0.6667 | 0.3636  
-| manual extraction 2               | 0.5556   | same (n=18)                                    | 0.2308    | 0.3333 | 0.2727   |
-|                                   |          | diff (n=54)                                    | 0.7391    | 0.6296 | 0.68     |
+| entity extraction<br>approach     | accuracy | precision | recall | F1-score |
+|-----------------------------------|----------|-----------|--------|----------|
+| TF-IDF                            | 0.2500   | 0.1250    | 0.5000 | 0.2000   |
+| LDA argmax                        | 0.5278   | 0.5278    | 0.5370 | 0.4963   |
+| top n<br>co-occurring<br>entities | 0.6250   | 0.5089    | 0.5093 | 0.5090   |
+| manual extraction 1               | 0.5834   | 0.5000    | 0.5000 | 0.4958   |
+| manual extraction 2               | 0.4444   | 0.5151    | 0.5185 | 0.4375   |
 
 
 
