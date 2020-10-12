@@ -1,4 +1,4 @@
-## Master Thesis 
+## OmissionOrCommission
 This extension to the [News-Relations library](https://github.com/fhamborg/NewsRelations) enables you to compare cooccurrences of different news-outlets and run statistical analysis on them, with the aim of detecting **bias by omission or comission**.
 
 There are different possiblities to select the co-occurring entities, based on classical NLP methods.
