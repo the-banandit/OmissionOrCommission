@@ -3,7 +3,7 @@ This extension to the [News-Relations library](https://github.com/fhamborg/NewsR
 
 There are different possiblities to select the co-occurring entities, based on classical NLP methods.
 
-If you are interested in the datasets please contact me via e-mail.
+If you are interested in the datasets, please write me a message via e-mail.
 
 ## Motivation
 Bias by omission or commission describes the wanted or unwanted discrepancy of information between news-articles from different news outlets, covering the same topic. It manifests in the omission of perspectives or sources. Hence, it shows similarities to source-selection bias. 
